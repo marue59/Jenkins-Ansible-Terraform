@@ -1,7 +1,9 @@
 pipeline {
     agent {
-        label 'docker-agent'
-        docker { image 'node:10-alpine' }
+        docker { 
+            label 'docker-agent'
+            image 'node:10-alpine' 
+        }
     }
     stages {
         stage('Build') {
