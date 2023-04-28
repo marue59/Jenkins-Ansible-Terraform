@@ -1,4 +1,5 @@
 pipeline {
+    node docker-agent
     agent {
         docker { image 'node:10-alpine' }
     }
@@ -15,8 +16,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'docker build -t # .'
-                sh 'docker run -it -p 8080:8080 --name # # '
+                sh 'docker build -t todo-list-m2i .'
+            //    sh 'docker run -it -p 8080:8080 --name todo-list-m2i todo-list-m2i '
             }
         }
     }
